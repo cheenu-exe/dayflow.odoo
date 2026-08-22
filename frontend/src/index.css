@@ -1,0 +1,129 @@
+/* STYLE: Signal Ledger — editorial workforce decision desk; dual light/dark aesthetics. */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-paper: var(--color-paper-val);
+  --color-ink: var(--color-ink-val);
+  --color-verdant: #0b6b57;
+  --color-ochre: #d79a2b;
+  --color-persimmon: #c85a3a;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #f7f5ef;
+  --foreground: #20211f;
+  --card: #ffffff;
+  --card-foreground: #20211f;
+  --popover: #ffffff;
+  --popover-foreground: #20211f;
+  --primary: #0b6b57;
+  --primary-foreground: #ffffff;
+  --secondary: #efeee8;
+  --secondary-foreground: #20211f;
+  --muted: #efeee8;
+  --muted-foreground: #6b6b64;
+  --accent: #edf7f3;
+  --accent-foreground: #0b6b57;
+  --destructive: #c85a3a;
+  --destructive-foreground: #ffffff;
+  --border: rgba(32, 33, 31, 0.12);
+  --input: rgba(32, 33, 31, 0.12);
+  --ring: #0b6b57;
+  --color-paper-val: #f7f5ef;
+  --color-ink-val: #20211f;
+}
+
+.dark {
+  --background: #121312;
+  --foreground: #f4f4f0;
+  --card: #1c1d1a;
+  --card-foreground: #f4f4f0;
+  --popover: #1c1d1a;
+  --popover-foreground: #f4f4f0;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #262724;
+  --secondary-foreground: #f4f4f0;
+  --muted: #262724;
+  --muted-foreground: #9ca3af;
+  --accent: #172822;
+  --accent-foreground: #34d399;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: rgba(244, 244, 240, 0.12);
+  --input: rgba(244, 244, 240, 0.12);
+  --ring: #10b981;
+  --color-paper-val: #121312;
+  --color-ink-val: #f4f4f0;
+}
+
+* { @apply border-border outline-ring/50; }
+html { background: var(--background); }
+body { min-width: 320px; background: var(--background); color: var(--foreground); font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled), a[href] { cursor: pointer; }
+.font-display { font-family: "Fraunces", Georgia, serif; }
+
+.dark .bg-white {
+  background-color: #1c1d1a !important;
+  color: #f4f4f0;
+}
+
+.dark .bg-\[\#f7f5ef\] {
+  background-color: #121312 !important;
+  color: #f4f4f0;
+}
+
+.dark .bg-\[\#f7f5ef\]\/40, .dark .bg-\[\#f7f5ef\]\/50 {
+  background-color: rgba(28, 29, 26, 0.6) !important;
+}
+
+.dark .text-ink {
+  color: #f4f4f0 !important;
+}
+
+.dark .border-ink\/10, .dark .border-ink\/12, .dark .border-ink\/15, .dark .border-ink\/8 {
+  border-color: rgba(244, 244, 240, 0.1) !important;
+}
+
+.dark .text-ink\/60, .dark .text-ink\/50, .dark .text-ink\/70, .dark .text-ink\/40 {
+  color: rgba(244, 244, 240, 0.6) !important;
+}
+
+.dark input, .dark select, .dark textarea {
+  background-color: #242522 !important;
+  color: #f4f4f0 !important;
+  border-color: rgba(244, 244, 240, 0.15) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main > * { animation: rise-in 360ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+  button, a { transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease; }
+  button:active { transform: scale(0.97); }
+}
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
